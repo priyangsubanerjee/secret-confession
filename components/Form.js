@@ -82,7 +82,7 @@ function Form({ secretUserId, setActiveLinks }) {
                 placeholder="Enter your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="bg-slate-100 px-4 py-2 w-full"
+                className="bg-slate-100 px-4 py-2 w-full rounded"
                 name=""
                 id=""
               />
