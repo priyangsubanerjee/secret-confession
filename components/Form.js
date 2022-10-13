@@ -90,7 +90,7 @@ function Form({ secretUserId, setActiveLinks }) {
                 <div className="flex space-x-2">
                   <input
                     type="checkbox"
-                    className="accent-teal-500"
+                    className="accent-teal-600"
                     name=""
                     id="sendEmailNotification"
                     checked={sendEmail}
