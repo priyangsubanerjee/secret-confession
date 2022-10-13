@@ -6,6 +6,7 @@ import { gql, client } from "../../helpers/graph";
 import sendMessage from "../../helpers/message";
 import sendEmail from "../../helpers/sendMail";
 import Link from "next/link";
+import Head from "next/head";
 
 export async function getServerSideProps(ctx) {
   const id = ctx.params.id;
@@ -47,7 +48,8 @@ function SecretMessage({ data }) {
 
   const onSubmit = async () => {
     setLoading(true);
-    const res = await sendMessage(message, data.id);
+    let n_message = message.replace(/\n/g, "\\n");
+    const res = await sendMessage(n_message, data.id);
     if (res.success) {
       if (data.email.length > 0) {
         try {
@@ -74,6 +76,9 @@ function SecretMessage({ data }) {
     <>
       {data ? (
         <div>
+          <Head>
+            <title>Send message to {data.name}</title>
+          </Head>
           {sent == false ? (
             <div className="p-5 bg-transparent">
               <form
@@ -114,7 +119,8 @@ function SecretMessage({ data }) {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Enter your message ..."
-                  className="mt-5 leading-5 p-3 bg-gray-50 border w-full rounded-md"
+                  className="mt-5 whitespace-pre-wrap
+                   leading-5 p-3 bg-gray-50 border w-full rounded-md"
                   id=""
                   rows="7"
                 ></textarea>
@@ -206,8 +212,10 @@ function SecretMessage({ data }) {
         </div>
       ) : (
         <div>
-          {" "}
           <div className="p-5 bg-transparent">
+            <Head>
+              <title>Error: Page not found</title>
+            </Head>
             <div className="border bg-white p-4">
               <div className="flex flex-col items-center justify-center mt-5">
                 <div className="text-teal-500">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Popover } from "@headlessui/react";
 import { client, gql } from "../../helpers/graph";
 import ReplyCard from "../../components/ReplyCard";
+import Head from "next/head";
 
 export async function getServerSideProps(ctx) {
   const id = ctx.params.id;
@@ -43,6 +44,9 @@ function Replies({ data }) {
 
   return (
     <div>
+      <Head>
+        <title>Replies</title>
+      </Head>
       <div className="px-5 mt-5 flex items-center">
         <h1 className="font-bold text-xl text-gray-700 shrink-0">Inbox</h1>
         <span className="ml-2 text-sm text-teal-600 font-medium">{`(${messages.length})`}</span>
