@@ -22,7 +22,6 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
       <Form secretUserId={secretUserId} setActiveLinks={setActiveLinks} />
       <div className="p-5 bg-transparent">
         {activeLinks.length > 0 && (

@@ -4,7 +4,7 @@ import React from "react";
 function QuickShareCard({ link, visible, close }) {
   const shareData = {
     title: "Secret message",
-    text: "Reply to this link anonymously!",
+    text: link,
     url: link,
   };
 
@@ -111,6 +111,12 @@ function QuickShareCard({ link, visible, close }) {
                   <img src="/twitter.png" className="h-7 w-7" alt="" />
                 </button>
               </div>
+              <ul className="text-xs text-gray-500 py-4 border-b leading-6">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit eaque quae suscipit quam maiores dolorem.
+                Voluptatem eaque inventore maiores! Consequuntur ex at possimus
+                assumenda officia temporibus tenetur corporis. Nam, accusantium.
+              </ul>
             </div>
           </div>
         </div>

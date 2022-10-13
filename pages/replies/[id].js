@@ -43,7 +43,6 @@ function Replies({ data }) {
 
   return (
     <div>
-      <Navbar />
       <div className="px-5 mt-5 flex items-center">
         <h1 className="font-bold text-xl text-gray-700 shrink-0">Inbox</h1>
         <span className="ml-2 text-sm text-teal-600 font-medium">{`(${messages.length})`}</span>

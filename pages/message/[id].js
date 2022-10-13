@@ -72,7 +72,6 @@ function SecretMessage({ data }) {
 
   return (
     <div>
-      <Navbar />
       {sent == false ? (
         <div className="p-5 bg-transparent">
           <form
