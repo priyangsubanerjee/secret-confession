@@ -16,7 +16,7 @@ export default async function (req, res) {
       });
 
       var options = {
-        from: `Secret Message <${process.env.NEXT_PUBLIC_EMAIL}>`,
+        from: `Secret confession <${process.env.NEXT_PUBLIC_EMAIL}>`,
         to,
         subject,
         html,
