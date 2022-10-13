@@ -122,7 +122,7 @@ function Form({ secretUserId, setActiveLinks }) {
                 type="submit"
                 className="bg-teal-500 text-white rounded mt-6 font-medium w-full py-2"
               >
-                Create link
+                Create confession page
               </button>
             </div>
           </form>

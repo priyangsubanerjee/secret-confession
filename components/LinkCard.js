@@ -131,7 +131,7 @@ function LinkCard({ data, setActiveLinks }) {
             </Popover>
           </div>
           <Link href={`/replies/${data.id}`}>
-            <button className="text-xs ml-auto text-slate-500 bg-slate-50 border py-1 px-4 rounded-full flex items-center space-x-1">
+            <button className="text-xs ml-auto text-slate-600 bg-slate-50 border py-1 px-4 rounded-full flex items-center space-x-1">
               <span>Replies</span>
               <span>
                 <svg

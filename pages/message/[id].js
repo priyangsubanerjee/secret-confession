@@ -185,10 +185,9 @@ function SecretMessage({ data }) {
                   <Link href="/">
                     <button
                       type="submit"
-                      onClick={() => setRunConfetti(true)}
                       className="bg-teal-500 text-white rounded mt-5 font-medium w-full py-2"
                     >
-                      Create your link
+                      Create your confession page
                     </button>
                   </Link>
                 </div>
@@ -269,10 +268,9 @@ function SecretMessage({ data }) {
                 <Link href="/">
                   <button
                     type="submit"
-                    onClick={() => setRunConfetti(true)}
                     className="bg-teal-500 text-white rounded mt-5 font-medium w-full py-2"
                   >
-                    Create your link
+                    Create your confession page
                   </button>
                 </Link>
               </div>
