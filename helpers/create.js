@@ -14,7 +14,8 @@ const create = async (name, email, userId) => {
     return {
       success: true,
       data: response.createLink,
-      link: "localhost:3000/message/" + response.createLink.id,
+      link:
+        "https://secretconfession.vercel.app/message/" + response.createLink.id,
     };
   } else {
     return {
