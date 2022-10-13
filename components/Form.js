@@ -113,7 +113,7 @@ function Form({ secretUserId, setActiveLinks }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter a valid email address"
-                  className="bg-slate-100 px-4 py-2 w-full mt-6"
+                  className="bg-slate-100 px-4 py-2 w-full mt-6 rounded"
                   name=""
                   id=""
                 />
