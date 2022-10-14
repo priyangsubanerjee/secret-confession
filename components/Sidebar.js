@@ -1,6 +1,19 @@
 import React from "react";
 
 function Sidebar({ open, close }) {
+  const shareLink = async () => {
+    const shareData = {
+      title: "Secret message",
+      text: `Send a secret message 🗝 to friends, Wanna tell anything or something else to them? Now it's time 😎, they will never know who sent it!, Just fun lets try 🗝 👉 https://secretconfession.vercel.app/`,
+    };
+
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       {open && (
@@ -35,7 +48,10 @@ function Sidebar({ open, close }) {
                 <span>Contact us</span>
               </li>
               <li className="py-1 px-4 flex space-x-2">
-                <button className="w-full p-2 bg-teal-500 active:bg-teal-600 text-white rounded font-medium">
+                <button
+                  onClick={() => shareLink()}
+                  className="w-full text-sm p-2 bg-teal-500 active:bg-teal-600 text-white rounded font-medium"
+                >
                   Share this app
                 </button>
               </li>
