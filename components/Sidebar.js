@@ -49,7 +49,7 @@ function Sidebar({ open, close }) {
                 <span>Contact us</span>
               </li>
               <li className="py-1 px-4 flex space-x-2">
-                <Link href="">
+                <Link href="https://www.linkedin.com/in/priyangsu-banerjee/">
                   <span>Developers profile</span>
                 </Link>
               </li>
