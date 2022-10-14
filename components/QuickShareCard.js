@@ -107,10 +107,10 @@ function QuickShareCard({ data, visible, close }) {
                   </span>
                   <span>Copy</span>
                 </button>
-                <button className="ml-7">
+                <button className="ml-7 hidden">
                   <img src="/whatsapp.png" className="h-8 w-8" alt="" />
                 </button>
-                <button className="ml-7">
+                <button className="ml-7 hidden">
                   <img src="/twitter.png" className="h-7 w-7" alt="" />
                 </button>
               </div>
