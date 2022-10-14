@@ -100,6 +100,7 @@ function SecretMessage({ data }) {
               property="og:url"
               content="https://secretconfession.vercel.app"
             />
+            <meta property="og:image:type" content="image/png" />
           </Head>
           {sent == false ? (
             <div className="p-5 bg-transparent">
