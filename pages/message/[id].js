@@ -92,7 +92,10 @@ function SecretMessage({ data }) {
               content="Secret Confession allows you to receive anonymous messages from your friends."
             />
             <meta property="og:type" content="website" />
-            <meta property="og:image" content="/ogimage.png" />
+            <meta
+              property="og:image"
+              content="https://secretconfession.vercel.app/ogimage.png"
+            />
             <meta
               property="og:url"
               content="https://secretconfession.vercel.app"
