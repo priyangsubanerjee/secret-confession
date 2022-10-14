@@ -6,6 +6,7 @@ import { client, gql } from "../../helpers/graph";
 import ReplyCard from "../../components/ReplyCard";
 import Head from "next/head";
 import checkUserId from "../../helpers/userId";
+import toast, { Toaster } from "react-hot-toast";
 
 export async function getServerSideProps(ctx) {
   const id = ctx.params.id;
@@ -38,6 +39,30 @@ export async function getServerSideProps(ctx) {
 function Replies({ data }) {
   const [messages, setMessages] = useState([]);
   const [verified, setVerified] = useState(false);
+
+  const shareLink = async () => {
+    const shareData = {
+      title: "Secret message",
+      text: `Send a secret message 🗝 to ${data.name}, Wanna tell anything or something else to me? Now it's time 😎, I'm very excited 😍 ,I will never know who send me!, Just fun lets try 🗝 👉 https://secretconfession.vercel.app/message/${data.id}`,
+    };
+
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const copyLink = async () => {
+    try {
+      toast("Copied");
+      navigator.clipboard.writeText(
+        `https://secretconfession.vercel.app/message/${data.id}`
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useLayoutEffect(() => {
     let msgs_s = data.messages || [];
@@ -92,12 +117,18 @@ function Replies({ data }) {
                     </button>
                   </li>
                   <li className="px-4">
-                    <Link href={`/message/`}>
-                      <button>Copy message link</button>
-                    </Link>
+                    <Popover.Button>
+                      <button onClick={() => copyLink()}>
+                        Copy message link
+                      </button>
+                    </Popover.Button>
                   </li>
                   <li className="px-4">
-                    <button>Share message link</button>
+                    <Popover.Button>
+                      <button onClick={() => shareLink()}>
+                        Share message link
+                      </button>
+                    </Popover.Button>
                   </li>
                   <li className="px-4">
                     <Link href={`/message/${data.id}`}>

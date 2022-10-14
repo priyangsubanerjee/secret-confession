@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 function QuickShareCard({ data, visible, close }) {
   const shareData = {
@@ -10,8 +11,8 @@ function QuickShareCard({ data, visible, close }) {
   return (
     <>
       {visible && (
-        <div className="fixed inset-0 z-10 bg-black/50 flex items-end">
-          <div className="bg-white w-full">
+        <div className="fixed inset-0 z-10 bg-black/50 flex items-end lg:items-center lg:justify-center">
+          <div className="bg-white w-full lg:w-[600px]">
             <div className="p-5 bg-transparent">
               <div className="flex items-center">
                 <span className="text-sm font-medium text-gray-700 flex items-center space-x-2">
@@ -57,7 +58,7 @@ function QuickShareCard({ data, visible, close }) {
                       console.log(err);
                     }
                   }}
-                  className="bg-gray-50 border py-2 px-4 rounded text-sm flex items-center space-x-2"
+                  className="bg-gray-50 active:bg-gray-100 border py-2 px-4 rounded text-sm flex items-center space-x-2"
                 >
                   <span className="text-gray-600">
                     <svg
@@ -78,12 +79,13 @@ function QuickShareCard({ data, visible, close }) {
                 <button
                   onClick={() => {
                     try {
+                      toast("Copied");
                       navigator.clipboard.writeText(link);
                     } catch (error) {
                       console.log(error);
                     }
                   }}
-                  className="bg-gray-50 border ml-4 py-2 px-4 rounded text-sm flex items-center space-x-2"
+                  className="bg-gray-50 active:bg-gray-100 border ml-4 py-2 px-4 rounded text-sm flex items-center space-x-2"
                 >
                   <span className="text-gray-600">
                     <svg

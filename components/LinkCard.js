@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Popover } from "@headlessui/react";
 import deleteLink from "../helpers/delete";
 import Loading from "./Loading";
+import toast, { Toaster } from "react-hot-toast";
 
 function LinkCard({ data, setActiveLinks }) {
   const [loading, setLoading] = useState(false);
@@ -21,6 +22,7 @@ function LinkCard({ data, setActiveLinks }) {
 
   const copyLink = async () => {
     try {
+      toast("Copied");
       navigator.clipboard.writeText(
         `https://secretconfession.vercel.app/message/${data.id}`
       );
@@ -132,6 +134,11 @@ function LinkCard({ data, setActiveLinks }) {
                     <Link href={`/message/${data.id}`}>
                       <button>Preview message page</button>
                     </Link>
+                  </li>
+                  <li className="px-4 opacity-50">
+                    <button>
+                      {data.email.length > 0 ? "Remove email" : "Add email"}
+                    </button>
                   </li>
                   <li className="px-4">
                     <Popover.Button>
