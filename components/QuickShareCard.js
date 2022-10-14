@@ -1,13 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
-function QuickShareCard({ link, visible, close }) {
+function QuickShareCard({ data, visible, close }) {
   const shareData = {
     title: "Secret message",
-    text: link,
-    url: link,
+    text: `Send a secret message 🗝 to ${data.name}, Wanna tell anything or something else to me? Now it's time 😎, I'm very excited 😍 ,I will never know who send me!, Just fun lets try 🗝 👉 https://secretconfession.vercel.app/message/${data.id}`,
+    url: `Send a secret message 🗝 to ${data.name}, Wanna tell anything or something else to me? Now it's time 😎, I'm very excited 😍 ,I will never know who send me!, Just fun lets try 🗝 👉 https://secretconfession.vercel.app/message/${data.id}`,
   };
-
   return (
     <>
       {visible && (
@@ -30,7 +29,7 @@ function QuickShareCard({ link, visible, close }) {
                       />
                     </svg>
                   </span>
-                  <span>Link created successfully</span>
+                  <span>Confession page created successfully</span>
                 </span>
                 <button onClick={() => close()} className="ml-auto">
                   <svg
@@ -111,11 +110,32 @@ function QuickShareCard({ link, visible, close }) {
                   <img src="/twitter.png" className="h-7 w-7" alt="" />
                 </button>
               </div>
-              <ul className="text-xs text-gray-500 py-4 border-b leading-6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit eaque quae suscipit quam maiores dolorem.
-                Voluptatem eaque inventore maiores! Consequuntur ex at possimus
-                assumenda officia temporibus tenetur corporis. Nam, accusantium.
+              <p className="text-xs text-gray-500 leading-6 mt-5">
+                Please Understand If you have used a service called anonymous
+                messages, you must understand the identity of users sending you
+                messages are not stored.
+              </p>
+              <ul className="text-xs text-gray-500 py-4 border-b ml-2">
+                <li className="py-1 flex space-x-2">
+                  <div className="flex space-x-1">
+                    <span>•</span>
+                  </div>
+                  <span>Now share your link with your friends.</span>
+                </li>
+                <li className="py-1 flex space-x-2">
+                  <div className="flex space-x-1">
+                    <span>•</span>
+                  </div>
+                  <span>
+                    There are no ways to understand who sent you the messages.
+                  </span>
+                </li>
+                <li className="py-1 flex space-x-2">
+                  <div className="flex space-x-1">
+                    <span>•</span>
+                  </div>
+                  <span>Even developers cant find who messaged you.</span>
+                </li>
               </ul>
             </div>
           </div>

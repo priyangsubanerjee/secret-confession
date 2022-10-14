@@ -7,10 +7,26 @@ import Loading from "./Loading";
 function LinkCard({ data, setActiveLinks }) {
   const [loading, setLoading] = useState(false);
   const shareLink = async () => {
+    const shareData = {
+      title: "Secret message",
+      text: `Send a secret message 🗝 to ${data.name}, Wanna tell anything or something else to me? Now it's time 😎, I'm very excited 😍 ,I will never know who send me!, Just fun lets try 🗝 👉 https://secretconfession.vercel.app/message/${data.id}`,
+      url: `Send a secret message 🗝 to ${data.name}, Wanna tell anything or something else to me? Now it's time 😎, I'm very excited 😍 ,I will never know who send me!, Just fun lets try 🗝 👉 https://secretconfession.vercel.app/message/${data.id}`,
+    };
+
     try {
-      await navigator.share(`http://localhost:3000/message/${data.id}`);
+      await navigator.share(shareData);
     } catch (err) {
       console.log(err);
+    }
+  };
+
+  const copyLink = async () => {
+    try {
+      navigator.clipboard.writeText(
+        `https://secretconfession.vercel.app/message/${data.id}`
+      );
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -96,18 +112,22 @@ function LinkCard({ data, setActiveLinks }) {
               <Popover.Panel className="absolute left-0 top-6 z-10 bg-white rounded border shadow text-left">
                 <ul className="text-xs text-gray-500 py-3 space-y-3 whitespace-nowrap">
                   <li className="px-4">
-                    <button
-                      onClick={() => {
-                        shareLink();
-                      }}
-                    >
-                      Share message link
-                    </button>
+                    <Popover.Button>
+                      <button
+                        onClick={() => {
+                          shareLink();
+                        }}
+                      >
+                        Share message link
+                      </button>
+                    </Popover.Button>
                   </li>
                   <li className="px-4">
-                    <Link href={`/message/${data.id}`}>
-                      <button>Copy message link</button>
-                    </Link>
+                    <Popover.Button>
+                      <button onClick={() => copyLink()}>
+                        Copy message link
+                      </button>
+                    </Popover.Button>
                   </li>
                   <li className="px-4">
                     <Link href={`/message/${data.id}`}>

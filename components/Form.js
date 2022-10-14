@@ -10,12 +10,12 @@ function Form({ secretUserId, setActiveLinks }) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [quickShareIsOpen, setQuickShareIsOpen] = useState(false);
-  const [shareLink, setShareLink] = useState("");
+  const [shareData, setShareData] = useState("");
 
   const steps = [
-    "Enter your name",
+    "Enter your Name, create confession link and share with your friends on Whatsapp, Facebook.",
     "Select the checkbox, if you want to receive notification each time someone replies.",
-    "Click on create a link button",
+    "Once your friends send you a message, you will see the results on replies page.",
   ];
 
   const onSubmit = async () => {
@@ -29,7 +29,7 @@ function Form({ secretUserId, setActiveLinks }) {
         setName("");
         setEmail("");
         setSendEmail(false);
-        setShareLink(res.link);
+        setShareData(res.data);
       } catch (error) {
         setLoading(false);
       }
@@ -39,30 +39,30 @@ function Form({ secretUserId, setActiveLinks }) {
   };
 
   useEffect(() => {
-    if (shareLink.length > 0) {
+    if (shareData.id) {
       setQuickShareIsOpen(true);
     }
-  }, [shareLink]);
+  }, [shareData]);
 
   const closeQuickShare = () => {
     setQuickShareIsOpen(false);
-    setShareLink("");
+    setShareData("");
   };
 
   return (
     <div>
       <div className="p-5 bg-transparent">
         <div className="border shadow-md shadow-slate-100 bg-white">
-          <ul className="text-xs text-gray-500 py-4 border-b">
+          <ul className="text-xs text-gray-500 py-4 border-b space-y-1">
             {steps.map((step, i) => {
               return (
                 <>
-                  <li className="py-1 px-4 flex space-x-2">
+                  <li className="py-1 px-4 flex space-x-2 items-baseline">
                     <div className="flex space-x-1">
                       <span>{i + 1}</span>
                       <span>.</span>
                     </div>
-                    <span>{step}</span>
+                    <span className="leading-5">{step}</span>
                   </li>
                 </>
               );
@@ -131,7 +131,7 @@ function Form({ secretUserId, setActiveLinks }) {
       <Loading visible={loading} />
       <QuickShareCard
         close={closeQuickShare}
-        link={shareLink}
+        data={shareData}
         visible={quickShareIsOpen}
       />
     </div>

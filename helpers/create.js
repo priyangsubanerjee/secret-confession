@@ -5,6 +5,9 @@ const create = async (name, email, userId) => {
     mutation MyMutation {
       createLink(data: { email: "${email}", name: "${name}", userId: "${userId}", views: ${0} }) {
         id
+        name
+        email
+        userId
       }
     }
   `;
