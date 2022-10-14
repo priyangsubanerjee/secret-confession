@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Confetti from "react-confetti";
@@ -7,6 +8,7 @@ import sendMessage from "../../helpers/message";
 import sendEmail from "../../helpers/sendMail";
 import Link from "next/link";
 import Head from "next/head";
+import incrementView from "../../helpers/views";
 
 export async function getServerSideProps(ctx) {
   const id = ctx.params.id;
@@ -45,6 +47,12 @@ function SecretMessage({ data }) {
     setWidth(innerWidth);
     setHeight(innerHeight);
   }, []);
+
+  useLayoutEffect(() => {
+    (async () => {
+      data.id && (await incrementView(data.id));
+    })();
+  }, [data]);
 
   const onSubmit = async () => {
     setLoading(true);
