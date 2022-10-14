@@ -102,7 +102,7 @@ function Form({ secretUserId, setActiveLinks }) {
                     htmlFor="sendEmailNotification"
                     className="text-slate-500 text-xs"
                   >
-                    Send email notification for new message.
+                    Send me email notification for new message.
                   </label>
                 </div>
               </div>

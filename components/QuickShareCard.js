@@ -80,7 +80,9 @@ function QuickShareCard({ data, visible, close }) {
                   onClick={() => {
                     try {
                       toast("Copied");
-                      navigator.clipboard.writeText(link);
+                      navigator.clipboard.writeText(
+                        `https://secretconfession.vercel.app/message/${data.id}`
+                      );
                     } catch (error) {
                       console.log(error);
                     }

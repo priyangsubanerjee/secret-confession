@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Sidebar({ open, close }) {
@@ -47,6 +48,12 @@ function Sidebar({ open, close }) {
               <li className="py-1 px-4 flex space-x-2">
                 <span>Contact us</span>
               </li>
+              <li className="py-1 px-4 flex space-x-2">
+                <Link href="">
+                  <span>Developers profile</span>
+                </Link>
+              </li>
+
               <li className="py-1 px-4 flex space-x-2">
                 <button
                   onClick={() => shareLink()}
