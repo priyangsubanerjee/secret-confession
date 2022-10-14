@@ -28,6 +28,7 @@ function Navbar() {
             />
           </svg>
         </button>
+
         <Link href="/">
           <h1 className="text-gray-700 font-medium">
             <span className="text-teal-600 font-semibold">Secret</span>{" "}
