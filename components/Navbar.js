@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Sidebar from "./Sidebar";
 
 function Navbar() {
   const [hideBuyMeCoffee, setHideBuyMeCoffee] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
 
   setTimeout(() => {
     setHideBuyMeCoffee(true);
@@ -12,7 +14,7 @@ function Navbar() {
   return (
     <div className="bg-white border-b px-5 py-3 flex items-center justify-between sticky top-0 left-0">
       <div className="flex items-start space-x-2">
-        <button className="text-gray-800">
+        <button onClick={() => setSidebar(true)} className="text-gray-800">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -112,6 +114,7 @@ function Navbar() {
           </span>
         </button>
       </Link>
+      <Sidebar open={sidebar} close={() => setSidebar(false)} />
     </div>
   );
 }
