@@ -70,7 +70,7 @@ function Sidebar({ open, close }) {
                 </li>
               </ul>
               <ul className="text-xs text-gray-500 py-4 space-y-3">
-                <li className="py-1 px-4 flex space-x-2 opacity-50">
+                <li className="py-1 px-4 flex space-x-2">
                   <a
                     href="/instagramstory.png"
                     download={true}
