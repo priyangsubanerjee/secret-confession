@@ -18,7 +18,7 @@ function Sidebar({ open, close }) {
   return (
     <>
       {open && (
-        <div className="fixed inset-0 bg-black/50 flex">
+        <div className="fixed inset-0 bg-black/50 flex z-20">
           <div className="h-full w-[70%] bg-white">
             <div className="px-5 py-4 flex items-center justify-end">
               <button onClick={() => close()}>
