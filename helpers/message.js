@@ -1,10 +1,11 @@
 import { client, gql } from "./graph";
 
 const sendMessage = async (message, id) => {
+  const currentDate = new Date();
   const query = gql`
       mutation MyMutation {
         updateLink(
-          data: { messages: { create: { data: { message: "${message}" } } } }
+          data: { messages: { create: { data: { message: "${message}", date:"${currentDate}"  } } } }
           where: { id: "${id}" }
         ) {
           id

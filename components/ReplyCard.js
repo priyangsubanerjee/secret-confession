@@ -13,6 +13,13 @@ function ReplyCard({ message, linkId, setMessages }) {
     setLoading(false);
   };
 
+  const formatDateTime = (str) => {
+    const date = new Date(str);
+    let n = date.toLocaleDateString();
+    let t = date.toLocaleTimeString().substring(0, 5);
+    return n + " " + t;
+  };
+
   return (
     <div>
       <div key={message.id}>
@@ -20,7 +27,7 @@ function ReplyCard({ message, linkId, setMessages }) {
           <div className="text-sm">
             <div className="flex items-center justify-between">
               <span className="text-xs text-gray-500">
-                12.10.2022, 03:00 PM
+                {message.date.length > 0 ? formatDateTime(message.date) : ""}
               </span>
               <Popover className="relative">
                 <Popover.Button>

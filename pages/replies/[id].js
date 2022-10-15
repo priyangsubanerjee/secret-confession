@@ -20,6 +20,7 @@ export async function getServerSideProps(ctx) {
           userId
           views
           messages{
+            date
             message
             id
           }
