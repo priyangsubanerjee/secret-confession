@@ -12,7 +12,7 @@ function Navbar() {
   }, 3000);
 
   return (
-    <div className="bg-white border-b px-5 py-3 flex items-center justify-between sticky top-0 left-0">
+    <div className="bg-white border-b px-5 py-3 flex items-center justify-between sticky top-0 left-0 z-10">
       <div className="flex items-start space-x-2">
         <button onClick={() => setSidebar(true)} className="text-gray-800">
           <svg

@@ -91,16 +91,16 @@ function LinkCard({ data, setActiveLinks }) {
               {data.messages.length}
             </span>
           </div>
-          <div className="w-fit ml-5">
+          <div className="w-fit ml-5 -z-0">
             <Popover className="relative">
-              <Popover.Button className="mt-[1px] block">
+              <Popover.Button className="mt-[1px] block -z-10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  className="w-5 h-5"
+                  className="w-5 h-5 z-0"
                 >
                   <path
                     stroke-linecap="round"
