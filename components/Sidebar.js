@@ -25,7 +25,7 @@ function Sidebar({ open, close }) {
       <Fade when={open} left>
         {open && (
           <div className="fixed z-20 inset-0 flex">
-            <div className="h-full w-[70%] bg-white">
+            <div className="h-full w-[70%] lg:w-[400px] bg-white">
               <div className="px-5 py-4 flex items-center justify-end">
                 <button onClick={() => close()}>
                   <svg
