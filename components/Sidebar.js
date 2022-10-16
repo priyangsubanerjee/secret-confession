@@ -81,6 +81,14 @@ function Sidebar({ open, close }) {
                   </a>
                 </li>
               </ul>
+              <div className="mt-16 px-5">
+                <span className="text-xs text-zinc-500">
+                  All rights reserved by
+                </span>
+                <p className="text-sm text-teal-600 font-semibold mt-1">
+                  Virtual Base Corporation.
+                </p>
+              </div>
             </div>
           </div>
         )}
