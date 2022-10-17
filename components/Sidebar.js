@@ -55,7 +55,7 @@ function Sidebar({ open, close }) {
                   <span>Contact us</span>
                 </li>
                 <li className="py-1 px-4 flex space-x-2">
-                  <Link href="https://www.linkedin.com/in/priyangsu-banerjee/">
+                  <Link href="https://priyangsu.vercel.app/">
                     <span>Developers</span>
                   </Link>
                 </li>
