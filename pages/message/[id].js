@@ -90,17 +90,14 @@ function SecretMessage({ data }) {
             <link rel="icon" href="/favicon.png" type="image/x-icon" />
             <meta
               name="description"
-              content="Secret Confession allows you to receive anonymous messages from your friends. It’s you in discovering your strengths and areas for improvement by receiving honest, constructive feedback from your employees and your friends. What if someone has a secret crush on you or thinks that you're awesome, lazy or whatever else, you’ll find it out on Secret Confession. 😉 We’re all good at something, and it’s really important to know and hear from somebody else from time to time."
+              content={`Send an anonymous message to ${data.name} || Secret confession`}
             />
             <meta
               name="keywords"
               content="secret, message, confession, crush, love, fun, link, share, secret message app, webapp, app, website, tools"
             />
             <meta name="author" content="Priyangsu Banerjee" />
-            <meta
-              property="og:title"
-              content="Secret Confession allows you to receive anonymous messages from your friends."
-            />
+            <meta property="og:title" content="Secret Confession" />
             <meta property="og:type" content="website" />
             <meta
               property="og:image"
