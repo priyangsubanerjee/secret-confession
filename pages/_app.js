@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import NextNProgress from "nextjs-progressbar";
 import Navbar from "../components/Navbar";
 import toast, { Toaster } from "react-hot-toast";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }) {
       <div className="lg:w-[700px] lg:mx-auto">
         <Component {...pageProps} />
       </div>
+      <Footer />
       <Toaster />
     </>
   );
